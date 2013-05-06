@@ -5,23 +5,18 @@
  * files in your PHP application without a noticeable performance penalty.
  *
  * INSTALLATION
- * 1. Install PHPSASS. This script assumes you have installed PHPSASS with
- *    Composer, and that the main library can be included from the path defined
- *    in PHPSASS - by default, "vendor/richthegeek/phpsass/SassParser.php"
- *    Adjust if necessary.
+ * 1. Install PHP Composer (from http://getcomposer.org/) in your site's
+ *    document root. From the command line, you can do this with
+ *       "curl -sS https://getcomposer.org/installer | php", or see the
+ *    instructions on the Composer website -- http://getcomposer.org/.
  *
- * 2. Copy this file to your site root
+ * 2. Copy "composer.json", "scss.php" and ".htaccess" to that same
+ *    directory.
  *
- * 3. Create (or edit) a .htaccess file in that same directory
+ * 3. Run, again from that same directory, "php composer.phar install"
  *
- * 4. Add the following lines to your .htaccess file:
- *    RewriteEngine On
- *    RewriteRule ^(.*)\.scss$ scss.php?file=$1.scss [L,QSA]
- *
- * 5. Now include your SCSS files as follows:
- *    <link rel='stylesheet' href='<your stylesheet>.scss' />
- *
- * 6. That's it!
+ * 4. Done! You can now include your SCSS files as follows:
+ *     <link rel='stylesheet' href='<your stylesheet>.scss' />
  *
  * This script will compile the SCSS file once, and then cache the resulting
  * output to disk. If the underlying SCSS file changes, the cached disk copy
@@ -63,7 +58,7 @@ $day = 24 * 60 * 60;
 define("MAX_AGE", 30 * $day);
 
 $options = array(
-    'style' => 'compressed', // compact, expanded, or compressed
+    'style' => 'expanded', // compact, expanded, or compressed
     'cache' => FALSE,
     'syntax' => 'scss',
     'debug' => FALSE,

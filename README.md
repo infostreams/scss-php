@@ -4,27 +4,33 @@ files in your PHP application without a noticeable performance penalty.
 
 Installation
 ------------
-1. Install PHPSASS. This script assumes you have installed PHPSASS with
-   Composer, and that the main library can be included from the path defined
-   in PHPSASS - by default, "vendor/richthegeek/phpsass/SassParser.php"
-   Adjust if necessary.
+1. Install [Composer](http://getcomposer.org/) in your site's document root. 
+   From the command line, you can do this with 
+   ```curl -sS https://getcomposer.org/installer | php```, or see the 
+   instructions on the [Composer website](http://getcomposer.org/).
 
-2. Copy the ```scss.php``` file to your site root
+2. Copy ```composer.json```, ```scss.php``` and ```.htaccess``` to that same 
+   directory.
 
-3. Create (or edit) a .htaccess file in that same directory
+3. Run, again from that same directory, ```php composer.phar install```
 
-4. Add the following lines to your .htaccess file:
-   ```
-   RewriteEngine On
-   RewriteRule ^(.*)\.scss$ scss.php?file=$1.scss [L,QSA]
-   ```
-
-5. Now include your SCSS files as follows:
+4. Done! You can now include your SCSS files as follows:
    ```html 
     <link rel='stylesheet' href='<your stylesheet>.scss' />
     ```
 
-6. That's it!
+Alternate installation
+----------------------
+1. Download [PHPSASS](https://github.com/richthegeek/phpsass), and install 
+   it in your site root in a directory called 'vendor/richthegeek/phpsass/',
+   in such a way that 'vendor/richthegeek/phpsass/SassParser.php' exists.
+
+2. Copy the ```scss.php``` and ```.htaccess`` files to your site root
+
+3. Done! You can now include your SCSS files as follows:
+   ```html 
+    <link rel='stylesheet' href='<your stylesheet>.scss' />
+    ```
 
 This script will compile the SCSS file once, and then cache the resulting
 output to disk. If the underlying SCSS file changes, the cached disk copy
