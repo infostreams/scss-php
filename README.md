@@ -9,7 +9,7 @@ Installation
    in PHPSASS - by default, "vendor/richthegeek/phpsass/SassParser.php"
    Adjust if necessary.
 
-2. Copy this file to your site root
+2. Copy the ```scss.php``` file to your site root
 
 3. Create (or edit) a .htaccess file in that same directory
 
@@ -21,7 +21,8 @@ Installation
 
 5. Now include your SCSS files as follows:
    ```html 
-    <link rel='stylesheet' href='<your stylesheet>.scss' />```
+    <link rel='stylesheet' href='<your stylesheet>.scss' />
+    ```
 
 6. That's it!
 
