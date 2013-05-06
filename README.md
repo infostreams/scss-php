@@ -25,7 +25,7 @@ Alternate installation
    it in your site root in a directory called 'vendor/richthegeek/phpsass/',
    in such a way that 'vendor/richthegeek/phpsass/SassParser.php' exists.
 
-2. Copy the ```scss.php``` and ```.htaccess`` files to your site root
+2. Copy the ```scss.php``` and ```.htaccess``` files to your site root
 
 3. Done! You can now include your SCSS files as follows:
    ```html 
