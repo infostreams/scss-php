@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^(.*)\.scss$ scss.php?file=$1.scss [L,QSA]
